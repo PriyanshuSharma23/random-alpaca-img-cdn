@@ -1,6 +1,8 @@
 import sharp from "sharp";
 import fs from "fs";
-const nose = "public/images/nose.png";
+import path from "path";
+const prefix = (s: string) => path.join(process.cwd(), s);
+const nose = "images/nose.png";
 
 export async function GET(request: Request) {
   let params = new URL(request.url).searchParams;
@@ -21,7 +23,7 @@ export async function GET(request: Request) {
     .composite(
       selectedFiles.map((file) => {
         return {
-          input: file,
+          input: prefix(file),
           blend: "over",
         };
       })
@@ -99,75 +101,75 @@ function getFiles(dir: string): any[] {
 
 const files = [
   [
-    "public/images/backgrounds/blue50.png",
-    "public/images/backgrounds/blue60.png",
-    "public/images/backgrounds/blue70.png",
-    "public/images/backgrounds/darkblue30.png",
-    "public/images/backgrounds/darkblue50.png",
-    "public/images/backgrounds/darkblue70.png",
-    "public/images/backgrounds/green50.png",
-    "public/images/backgrounds/green60.png",
-    "public/images/backgrounds/green70.png",
-    "public/images/backgrounds/grey40.png",
-    "public/images/backgrounds/grey70.png",
-    "public/images/backgrounds/grey80.png",
-    "public/images/backgrounds/red50.png",
-    "public/images/backgrounds/red60.png",
-    "public/images/backgrounds/red70.png",
-    "public/images/backgrounds/yellow50.png",
-    "public/images/backgrounds/yellow60.png",
-    "public/images/backgrounds/yellow70.png",
+    "images/backgrounds/blue50.png",
+    "images/backgrounds/blue60.png",
+    "images/backgrounds/blue70.png",
+    "images/backgrounds/darkblue30.png",
+    "images/backgrounds/darkblue50.png",
+    "images/backgrounds/darkblue70.png",
+    "images/backgrounds/green50.png",
+    "images/backgrounds/green60.png",
+    "images/backgrounds/green70.png",
+    "images/backgrounds/grey40.png",
+    "images/backgrounds/grey70.png",
+    "images/backgrounds/grey80.png",
+    "images/backgrounds/red50.png",
+    "images/backgrounds/red60.png",
+    "images/backgrounds/red70.png",
+    "images/backgrounds/yellow50.png",
+    "images/backgrounds/yellow60.png",
+    "images/backgrounds/yellow70.png",
   ],
   [
-    "public/images/neck/bend-backward.png",
-    "public/images/neck/bend-forward.png",
-    "public/images/neck/default.png",
-    "public/images/neck/thick.png",
+    "images/neck/bend-backward.png",
+    "images/neck/bend-forward.png",
+    "images/neck/default.png",
+    "images/neck/thick.png",
   ],
   [nose],
   [
-    "public/images/ears/default.png",
-    "public/images/ears/tilt-backward.png",
-    "public/images/ears/tilt-forward.png",
+    "images/ears/default.png",
+    "images/ears/tilt-backward.png",
+    "images/ears/tilt-forward.png",
   ],
 
   [
-    "public/images/hair/bang.png",
-    "public/images/hair/curls.png",
-    "public/images/hair/default.png",
-    "public/images/hair/elegant.png",
-    "public/images/hair/fancy.png",
-    "public/images/hair/quiff.png",
-    "public/images/hair/short.png",
+    "images/hair/bang.png",
+    "images/hair/curls.png",
+    "images/hair/default.png",
+    "images/hair/elegant.png",
+    "images/hair/fancy.png",
+    "images/hair/quiff.png",
+    "images/hair/short.png",
   ],
   [
-    "public/images/leg/bubble-tea.png",
-    "public/images/leg/cookie.png",
-    "public/images/leg/default.png",
-    "public/images/leg/game-console.png",
-    "public/images/leg/tilt-backward.png",
-    "public/images/leg/tilt-forward.png",
+    "images/leg/bubble-tea.png",
+    "images/leg/cookie.png",
+    "images/leg/default.png",
+    "images/leg/game-console.png",
+    "images/leg/tilt-backward.png",
+    "images/leg/tilt-forward.png",
   ],
   [
-    "public/images/mouth/astonished.png",
-    "public/images/mouth/default.png",
-    "public/images/mouth/eating.png",
-    "public/images/mouth/laugh.png",
-    "public/images/mouth/tongue.png",
+    "images/mouth/astonished.png",
+    "images/mouth/default.png",
+    "images/mouth/eating.png",
+    "images/mouth/laugh.png",
+    "images/mouth/tongue.png",
   ],
 
   [
-    "public/images/eyes/angry.png",
-    "public/images/eyes/default.png",
-    "public/images/eyes/naughty.png",
-    "public/images/eyes/panda.png",
-    "public/images/eyes/smart.png",
-    "public/images/eyes/star.png",
+    "images/eyes/angry.png",
+    "images/eyes/default.png",
+    "images/eyes/naughty.png",
+    "images/eyes/panda.png",
+    "images/eyes/smart.png",
+    "images/eyes/star.png",
   ],
   [
-    "public/images/accessories/earings.png",
-    "public/images/accessories/flower.png",
-    "public/images/accessories/glasses.png",
-    "public/images/accessories/headphone.png",
+    "images/accessories/earings.png",
+    "images/accessories/flower.png",
+    "images/accessories/glasses.png",
+    "images/accessories/headphone.png",
   ],
 ];
